@@ -11,7 +11,7 @@ Varun Kumar S
 
 Welcome to my personal digital space! This repository hosts the source code for my professional landing page and portfolio, currently being built to showcase my journey as a Computer Science Engineer.
 
-**Live Site:** [https://varunkumar-s.github.io/]([https://varunkumar-s.github.io/](https://varun987-a11.github.io/varunkumar-s/))
+**Live Site:** [https://varun987-a11.github.io/varunkumar-s/]
 
 ---
 
