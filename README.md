@@ -1,7 +1,11 @@
-<div align='center'>
-Varun Kumar S 
+<div align="center">
+
+<h1 style="font-size: 60px; font-family: 'Segoe UI', sans-serif; letter-spacing: 2px;">
+Varun Kumar S
+</h1>
 
 </div>
+
 
 # Personal Portfolio (Under Construction)
 
