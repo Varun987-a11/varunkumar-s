@@ -1,4 +1,9 @@
-# 🚀 Varun Kumar S | Personal Portfolio (Under Construction)
+<div align='center'>
+# 🚀 Varun Kumar S 
+
+</div>
+
+# Personal Portfolio (Under Construction)
 
 Welcome to my personal digital space! This repository hosts the source code for my professional landing page and portfolio, currently being built to showcase my journey as a Computer Science Engineer.
 
