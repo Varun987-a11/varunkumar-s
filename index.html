@@ -207,6 +207,80 @@
             
             .btn-container { justify-content: center; }
         }
+        .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+
+    min-width: 160px;   /* 🔥 KEY FIX */
+    height: 48px;       /* 🔥 SAME HEIGHT */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Card Container */
+.project-card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Inner */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+/* Flip */
+.project-card.active .card-inner {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+/* Front + Back */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Front */
+.card-front img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Back */
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover glow */
+.project-card:hover .card-inner {
+    transform: scale(1.03);
+}
     </style>
 </head>
 <body>
@@ -257,6 +331,47 @@
                 </div>
             </div>
 
+            <div class="card">
+    <h2 style="margin-bottom: 20px;">Projects</h2>
+
+    <div class="projects-grid">
+
+        <!-- Project Card -->
+        <div class="project-card" onclick="toggleCard(this)">
+            <div class="card-inner">
+
+                <!-- Front -->
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/300x180" alt="Project">
+                    <h3>NoiseScope</h3>
+                </div>
+
+                <!-- Back -->
+                <div class="card-back">
+                    <h3>NoiseScope</h3>
+                    <p>Full-stack system for real-time noise mapping using Web Audio API, Node.js & MySQL.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Duplicate for more projects -->
+        <div class="project-card" onclick="toggleCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/300x180">
+                    <h3>DisasterLink</h3>
+                </div>
+                <div class="card-back">
+                    <h3>DisasterLink</h3>
+                    <p>Emergency reporting system with real-time tracking and admin dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
             <div class="construction-card">
                 <div class="construction-title">
                     <span class="blink">●</span> <span id="const-msg">SYSTEM STATUS: BUILDING...</span>
@@ -302,6 +417,10 @@
         }, 2500);
 
         type();
+
+        function toggleCard(card) {
+    card.classList.toggle("active");
+}
     </script>
 </body>
 </html>
