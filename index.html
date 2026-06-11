@@ -456,13 +456,32 @@
     }
 
     /* Cover image area */
-    .project-cover {
+    /* .project-cover {
       width: 100%;
       aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
       background: linear-gradient(135deg, #1a1e2e 0%, #0f1118 100%);
-    }
+    } */
+
+    .project-cover {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 18px 18px 0 0;
+}
+
+.project-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-cover img {
+    transform: scale(1.05);
+}
 
     .project-cover-placeholder {
       width: 100%;
@@ -1024,108 +1043,130 @@
 
         <div class="projects-grid">
 
-          <!-- Featured: Swagriha -->
-          <div class="project-card featured">
-            <div class="project-cover-placeholder">🏠</div>
-            <div class="project-body">
-              <div class="project-main">
-                <span class="featured-badge">★ Featured</span>
-                <div class="project-status status-live"><span class="status-dot"></span> Live in Production</div>
-                <div class="project-name">Swagriha — Family Productivity Platform</div>
-                <div class="project-desc">
-                  A Progressive Web App built with React, Vite, Firebase Hosting & Firestore. Features shared grocery management, expense tracking, group communication, task calendars, and monthly reports. Actively used by a real household — and evolving toward a multi-tenant product.
-                </div>
-                <div class="project-tags">
-                  <span class="project-tag">React</span>
-                  <span class="project-tag">Vite</span>
-                  <span class="project-tag">Firebase</span>
-                  <span class="project-tag">PWA</span>
-                  <span class="project-tag">Firestore</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- NoiseScope -->
-          <div class="project-card">
-            <div class="project-cover-placeholder">🔊</div>
-            <div class="project-body">
-              <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
-              <div class="project-name">NoiseScope</div>
-              <div class="project-desc">Crowdsourced noise mapping platform. Web Audio API for dB capture, Leaflet.js for geo-viz, Chart.js for trends. Full-stack with MySQL backend.</div>
-              <div class="project-tags">
-                <span class="project-tag">Node.js</span>
-                <span class="project-tag">MySQL</span>
-                <span class="project-tag">Leaflet.js</span>
-                <span class="project-tag">Web Audio API</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Jewellery Platform -->
-          <div class="project-card">
-            <div class="project-cover-placeholder">💎</div>
-            <div class="project-body">
-              <div class="project-status status-ongoing"><span class="status-dot"></span> Ongoing Client</div>
-              <div class="project-name">Jewellery Rental Platform</div>
-              <div class="project-desc">Custom web solution for a jewellery rental business — inventory management, booking, payment integration, and admin dashboard. End-to-end architecture.</div>
-              <div class="project-tags">
-                <span class="project-tag">Full-Stack</span>
-                <span class="project-tag">Booking</span>
-                <span class="project-tag">Admin CMS</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Crop Health -->
-          <div class="project-card">
-            <div class="project-cover-placeholder">🌱</div>
-            <div class="project-body">
-              <div class="project-status status-ongoing"><span class="status-dot"></span> Research · Ongoing</div>
-              <div class="project-name">Crop Disease Detection</div>
-              <div class="project-desc">Ensemble ML/DL system comparing MobileNetV2, ResNet50, DenseNet121, ViT & SVM on PlantVillage datasets. Transfer learning, confusion matrix analysis, F1-score benchmarking.</div>
-              <div class="project-tags">
-                <span class="project-tag">PyTorch</span>
-                <span class="project-tag">TensorFlow</span>
-                <span class="project-tag">ViT</span>
-                <span class="project-tag">OpenCV</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- MedixFlow -->
-          <div class="project-card">
-            <div class="project-cover-placeholder">🏥</div>
-            <div class="project-body">
-              <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
-              <div class="project-name">MedixFlow</div>
-              <div class="project-desc">Clinic appointment system with JWT auth, role-based access, time-slot validation, CRUD operations, and admin dashboard. PHP + MySQL backend.</div>
-              <div class="project-tags">
-                <span class="project-tag">PHP</span>
-                <span class="project-tag">MySQL</span>
-                <span class="project-tag">JWT</span>
-                <span class="project-tag">bcrypt</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- DisasterLink -->
-          <div class="project-card">
-            <div class="project-cover-placeholder">🚨</div>
-            <div class="project-body">
-              <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
-              <div class="project-name">DisasterLink</div>
-              <div class="project-desc">Emergency help and resource locator. Submit disaster reports with geo-location, admin dashboard with Pending → In-Progress → Resolved pipeline, resource locator for shelters.</div>
-              <div class="project-tags">
-                <span class="project-tag">Node.js</span>
-                <span class="project-tag">MySQL</span>
-                <span class="project-tag">Geolocation</span>
-                <span class="project-tag">Dashboard</span>
-              </div>
-            </div>
-          </div>
-
+  <!-- Featured: Swagriha -->
+  <div class="project-card featured">
+    <div class="project-cover">
+      <img src="swagrihacover.png" alt="Swagriha Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-main">
+        <span class="featured-badge">★ Featured</span>
+        <div class="project-status status-live"><span class="status-dot"></span> Live in Production</div>
+        <div class="project-name">Swagriha — Family Productivity Platform</div>
+        <div class="project-desc">
+          A Progressive Web App built with React, Vite, Firebase Hosting & Firestore. Features shared grocery management, expense tracking, group communication, task calendars, and monthly reports. Actively used by a real household — and evolving toward a multi-tenant product.
         </div>
+        <div class="project-tags">
+          <span class="project-tag">React</span>
+          <span class="project-tag">Vite</span>
+          <span class="project-tag">Firebase</span>
+          <span class="project-tag">PWA</span>
+          <span class="project-tag">Firestore</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NoiseScope -->
+  <div class="project-card">
+    <div class="project-cover">
+      <img src="noisescopecover.png" alt="NoiseScope Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
+      <div class="project-name">NoiseScope</div>
+      <div class="project-desc">
+        Crowdsourced noise mapping platform. Web Audio API for dB capture, Leaflet.js for geo-viz, Chart.js for trends. Full-stack with MySQL backend.
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Node.js</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">Leaflet.js</span>
+        <span class="project-tag">Web Audio API</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Jewellery Platform -->
+  <div class="project-card">
+    <div class="project-cover">
+      <img src="jewelleryrentalcover.png" alt="Jewellery Rental Platform Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-status status-ongoing"><span class="status-dot"></span> Ongoing Client</div>
+      <div class="project-name">Jewellery Rental Platform</div>
+      <div class="project-desc">
+        Custom web solution for a jewellery rental business — inventory management, booking, payment integration, and admin dashboard. End-to-end architecture.
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Full-Stack</span>
+        <span class="project-tag">Booking</span>
+        <span class="project-tag">Admin CMS</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Crop Health -->
+  <div class="project-card">
+    <div class="project-cover">
+      <img src="cropdiseasedetectioncover.png" alt="Crop Disease Detection Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-status status-ongoing"><span class="status-dot"></span> Research · Ongoing</div>
+      <div class="project-name">Crop Disease Detection</div>
+      <div class="project-desc">
+        Ensemble ML/DL system comparing MobileNetV2, ResNet50, DenseNet121, ViT & SVM on PlantVillage datasets. Transfer learning, confusion matrix analysis, F1-score benchmarking.
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">PyTorch</span>
+        <span class="project-tag">TensorFlow</span>
+        <span class="project-tag">ViT</span>
+        <span class="project-tag">OpenCV</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MedixFlow -->
+  <div class="project-card">
+    <div class="project-cover">
+      <img src="medixflowcover.png" alt="MedixFlow Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
+      <div class="project-name">MedixFlow</div>
+      <div class="project-desc">
+        Clinic appointment system with JWT auth, role-based access, time-slot validation, CRUD operations, and admin dashboard. PHP + MySQL backend.
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">PHP</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">JWT</span>
+        <span class="project-tag">bcrypt</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- DisasterLink -->
+  <div class="project-card">
+    <div class="project-cover">
+      <img src="disasterlinkcover.png" alt="DisasterLink Cover">
+    </div>
+    <div class="project-body">
+      <div class="project-status status-active"><span class="status-dot"></span> Completed</div>
+      <div class="project-name">DisasterLink</div>
+      <div class="project-desc">
+        Emergency help and resource locator. Submit disaster reports with geo-location, admin dashboard with Pending → In-Progress → Resolved pipeline, resource locator for shelters.
+      </div>
+      <div class="project-tags">
+        <span class="project-tag">Node.js</span>
+        <span class="project-tag">MySQL</span>
+        <span class="project-tag">Geolocation</span>
+        <span class="project-tag">Dashboard</span>
+      </div>
+    </div>
+  </div>
+
+</div>
 
         <p style="font-size:0.78rem; color:var(--text-dim); margin-top:18px; font-family:'JetBrains Mono',monospace; text-align:center;">
           ↑ Drop your cover images into each card by replacing the emoji placeholders with &lt;img src="your-img.jpg"&gt;
