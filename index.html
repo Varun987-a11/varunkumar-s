@@ -905,6 +905,26 @@
       transition: transform 0.1s linear;
       transform: translate(-50%, -50%);
     }
+
+.crop-placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(
+        135deg,
+        #182235 0%,
+        #101827 100%
+    );
+}
+
+.crop-icon{
+    font-size:4rem;
+    filter:drop-shadow(0 0 15px rgba(34,197,94,.4));
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -1119,10 +1139,13 @@
 
   <!-- Crop Health -->
 <div class="project-card">
-  <div class="project-cover">
+  <!-- <div class="project-cover">
     <img src="cropdiseasedetectioncover.png" alt="Crop Disease Detection Cover">
     
-  </div>
+  </div> -->
+  <div class="project-cover crop-placeholder">
+    <div class="crop-icon">🌱</div>
+</div>
 
   <div class="project-body">
     <div class="project-status status-ongoing">
