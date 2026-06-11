@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varun Kumar S | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* STICKY FLOATING LOGO */
+        .sticky-logo {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            width: 290px; 
+            z-index: 2000;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.2));
+        }
+
+        .sticky-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navbar - Floating Profile Image */
+        nav {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 5%;
+            box-sizing: border-box;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-profile {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            width: 200px;  
+            height: 200px; 
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            object-fit: cover;
+            z-index: 2000;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+        }
+
+        .nav-profile:hover {
+            transform: scale(1.05);
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+
+        .content { width: 90%; max-width: 700px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 28px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Stylish Name */
+        .hero-name {
+            font-size: clamp(1.4rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin: 0;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typing-text {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        .intro-text {
+            line-height: 1.8;
+            font-size: 1.15rem;
+            color: var(--text-dim);
+        }
+
+        .highlight { color: #fff; font-weight: 600; }
+
+        /* Construction Footer */
+        .construction-card {
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            border: 2px dashed #ca8a04;
+            color: #facc15;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .construction-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+        }
+
+        .blink { animation: blinker 1.5s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+
+        /* Social Buttons */
+        .btn-primary, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #0f172a;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background-color: #7dd3fc;
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        /* MOBILE RESPONSIVENESS FIXES */
+        @media (max-width: 768px) {
+            .container { padding-top: 220px; } /* Push content down to avoid overlapping floating elements */
+            
+            .sticky-logo { 
+                width: 100px; /* Scaled down logo for mobile */
+                top: 20px; 
+                left: 20px; 
+            }
+
+            .nav-profile {
+                width: 100px; /* Scaled down profile for mobile */
+                height: 100px;
+                top: 20px;
+                right: 20px;
+                position: absolute; /* Stops sticking on mobile to keep screen clear */
+            }
+
+            .hero-name { 
+                font-size: 2.2rem; 
+                text-align: center;
+            }
+
+            .typing-text { text-align: center; }
+
+            .card { padding: 30px 20px; }
+            
+            .intro-text { text-align: center; }
+            
+            .btn-container { justify-content: center; }
+        }
+        .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Space Grotesk', sans-serif;
+
+    min-width: 160px;   /* 🔥 KEY FIX */
+    height: 48px;       /* 🔥 SAME HEIGHT */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+/* Card Container */
+.project-card {
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Inner */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+}
+
+/* Flip */
+.project-card.active .card-inner {
+    transform: rotateY(180deg) scale(1.05);
+}
+
+/* Front + Back */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    background: #0f172a;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Front */
+.card-front img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+/* Back */
+.card-back {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover glow */
+.project-card:hover .card-inner {
+    transform: scale(1.03);
+}
+    </style>
+</head>
+<body>
+
+    <img src="logo.png" alt="Varunkumar-S" class="sticky-logo">
+
+    <nav>
+        <img src="profile.png" alt="Varun kumar S" class="nav-profile">
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            
+            <div class="card">
+                <h1 class="hero-name">Varun Kumar S</h1>
+                <div class="typing-text">
+                    <span id="typewriter"></span><span style="border-right: 2px solid var(--accent); animation: blinker 0.8s infinite;"></span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="intro-text">
+                    👋 Hello! <br>
+                    I am <span class="highlight">Varun Kumar S</span>, a CSE student dedicated to mastering Full Stack Development, and much more! <br>
+                    I enjoy breaking down complex backend logic and designing clean, functional web systems. 
+                    <br><br>
+                    Currently building a full stack web platform for a boutique client while exploring <span>Data Structures & Algorithms</span> to build a rock-solid engineering foundation. Also working on a few Projects.<br>
+
+                    <p style="font-size: 0.95rem; color: var(--text-dim); margin-top: 30px; font-style: italic; border-left: 3px solid var(--accent); padding-left: 15px; text-align: left;">
+                        While I’m busy wrestling with lines of code to commit the final version of this site, you can catch the behind-the-scenes of my projects on GitHub or connect with me on LinkedIn!
+                    </p>
+                </div>
+
+                <div class="btn-container" style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
+
+                    <a href="https://raw.githubusercontent.com/Varun987-a11/varunkumar-s/main/resume.pdf" target="_blank" class="btn-primary">
+    📄 View Resume 
+</a>
+                    <a href="https://linkedin.com/in/varunkumar-s" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                    </a>
+
+                    <a href="https://github.com/Varun987-a11" class="btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="card">
+    <h2 style="margin-bottom: 20px;">Projects</h2>
+
+    <div class="projects-grid">
+
+        <!-- Project Card -->
+        <div class="project-card" onclick="toggleCard(this)">
+            <div class="card-inner">
+
+                <!-- Front -->
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/300x180" alt="Project">
+                    <h3>NoiseScope</h3>
+                </div>
+
+                <!-- Back -->
+                <div class="card-back">
+                    <h3>NoiseScope</h3>
+                    <p>Full-stack system for real-time noise mapping using Web Audio API, Node.js & MySQL.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Duplicate for more projects -->
+        <div class="project-card" onclick="toggleCard(this)">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://via.placeholder.com/300x180">
+                    <h3>DisasterLink</h3>
+                </div>
+                <div class="card-back">
+                    <h3>DisasterLink</h3>
+                    <p>Emergency reporting system with real-time tracking and admin dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+            <div class="construction-card">
+                <div class="construction-title">
+                    <span class="blink">●</span> <span id="const-msg">SYSTEM STATUS: BUILDING...</span>
+                </div>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">A comprehensive portfolio experience is currently under construction.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Typewriter Effect
+        const textElement = document.getElementById('typewriter');
+        const phrases = ["Computer Science Engineer", "Full Stack Developer", "Web Engineering Student"];
+        let i = 0; let j = 0; let isDeleting = false;
+
+        function type() {
+            let currentPhrase = phrases[i];
+            if (isDeleting) {
+                textElement.textContent = currentPhrase.substring(0, j - 1);
+                j--;
+            } else {
+                textElement.textContent = currentPhrase.substring(0, j + 1);
+                j++;
+            }
+
+            if (!isDeleting && j === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && j === 0) {
+                isDeleting = false;
+                i = (i + 1) % phrases.length;
+            }
+            setTimeout(type, isDeleting ? 40 : 80);
+        }
+
+        // Under Construction Ticker
+        const constMsg = document.getElementById('const-msg');
+        const msgs = ["SYSTEM STATUS: BUILDING...", "INITIALIZING PORTFOLIO...", "DEPLOYING FEATURES...", "CODING IN PROGRESS..."];
+        let msgIdx = 0;
+        setInterval(() => {
+            msgIdx = (msgIdx + 1) % msgs.length;
+            constMsg.textContent = msgs[msgIdx];
+        }, 2500);
+
+        type();
+
+        function toggleCard(card) {
+    card.classList.toggle("active");
+} 
+    </script>
+</body>
+</html>   
