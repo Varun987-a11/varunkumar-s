@@ -464,24 +464,35 @@
       background: linear-gradient(135deg, #1a1e2e 0%, #0f1118 100%);
     } */
 
-    .project-cover {
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 18px 18px 0 0;
+ .project-cover {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
 }
 
 .project-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 .project-card:hover .project-cover img {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-body {
+  padding: 18px 20px 20px;
+  flex: 1;
+}
+
 
     .project-cover-placeholder {
       width: 100%;
@@ -936,7 +947,7 @@
     <!-- HERO -->
     <div class="section-block" id="s-hero">
       <div class="card hero-card">
-        <div class="hero-eyebrow">cs engineer · mangaluru</div>
+        <!-- <div class="hero-eyebrow">cs engineer · mangaluru</div> -->
         <h1 class="hero-name">Varun Kumar S</h1>
         <div class="typing-row">
           <span id="typewriter"></span><span class="typing-cursor"></span>
@@ -1044,7 +1055,7 @@
         <div class="projects-grid">
 
   <!-- Featured: Swagriha -->
-  <div class="project-card featured">
+<div class="project-card">
     <div class="project-cover">
       <img src="swagrihacover.png" alt="Swagriha Cover">
     </div>
@@ -1090,7 +1101,7 @@
   <!-- Jewellery Platform -->
   <div class="project-card">
     <div class="project-cover">
-      <img src="jewelleryrentalcover.png" alt="Jewellery Rental Platform Cover">
+      <img src="vivahamcover.png" alt="Jewellery Rental Platform Cover">
     </div>
     <div class="project-body">
       <div class="project-status status-ongoing"><span class="status-dot"></span> Ongoing Client</div>
@@ -1107,24 +1118,37 @@
   </div>
 
   <!-- Crop Health -->
-  <div class="project-card">
-    <div class="project-cover">
-      <img src="cropdiseasedetectioncover.png" alt="Crop Disease Detection Cover">
+<div class="project-card">
+  <div class="project-cover">
+    <img src="cropdiseasedetectioncover.png" alt="Crop Disease Detection Cover">
+    
+  </div>
+
+  <div class="project-body">
+    <div class="project-status status-ongoing">
+      <span class="status-dot"></span>
+      Research · Ongoing
     </div>
-    <div class="project-body">
-      <div class="project-status status-ongoing"><span class="status-dot"></span> Research · Ongoing</div>
-      <div class="project-name">Crop Disease Detection</div>
-      <div class="project-desc">
-        Ensemble ML/DL system comparing MobileNetV2, ResNet50, DenseNet121, ViT & SVM on PlantVillage datasets. Transfer learning, confusion matrix analysis, F1-score benchmarking.
-      </div>
-      <div class="project-tags">
-        <span class="project-tag">PyTorch</span>
-        <span class="project-tag">TensorFlow</span>
-        <span class="project-tag">ViT</span>
-        <span class="project-tag">OpenCV</span>
-      </div>
+
+    <div class="project-name">
+      Crop Disease Detection
+    </div>
+
+    <div class="project-desc">
+      Ensemble ML/DL system comparing MobileNetV2, ResNet50,
+      DenseNet121, ViT & SVM on PlantVillage datasets.
+      Transfer learning, confusion matrix analysis,
+      F1-score benchmarking.
+    </div>
+
+    <div class="project-tags">
+      <span class="project-tag">PyTorch</span>
+      <span class="project-tag">TensorFlow</span>
+      <span class="project-tag">ViT</span>
+      <span class="project-tag">OpenCV</span>
     </div>
   </div>
+</div>
 
   <!-- MedixFlow -->
   <div class="project-card">
@@ -1169,7 +1193,7 @@
 </div>
 
         <p style="font-size:0.78rem; color:var(--text-dim); margin-top:18px; font-family:'JetBrains Mono',monospace; text-align:center;">
-          ↑ Drop your cover images into each card by replacing the emoji placeholders with &lt;img src="your-img.jpg"&gt;
+          <!-- ↑ Drop your cover images into each card by replacing the emoji placeholders with &lt;img src="your-img.jpg"&gt; -->
         </p>
       </div>
     </div>
@@ -1241,12 +1265,12 @@
               <strong>Selected for Final Interview</strong> — BOLPU Regional Startup Initiative, Mangaluru. Presented solution before industry experts and demonstrated prototype.
             </div>
           </div>
-          <div class="achievement-item">
+          <!-- <div class="achievement-item">
             <div class="achievement-icon">⚓</div>
             <div class="achievement-text">
               <strong>Arduino-based deep-sea prototype</strong> — contributed to development of a loss-detection system for fishing net operations. Presented at College of Engineering, Phaltan.
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
