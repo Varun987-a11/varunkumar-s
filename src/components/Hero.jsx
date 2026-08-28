@@ -58,11 +58,11 @@ export default function Hero() {
 
       <div className="btn-row">
         <a
-          href="https://raw.githubusercontent.com/Varun987-a11/varunkumar-s/main/Varun_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
+        href="/Varun_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn btn-primary"
+      >
           <svg
             width="18"
             height="18"
