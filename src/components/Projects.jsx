@@ -19,7 +19,7 @@ const PROJECTS = [
     name: 'Crop Disease Detection System',
     desc: 'An ensemble machine learning pipeline evaluating MobileNetV2, ResNet50, DenseNet121, Vision Transformers (ViT), and SVM models across PlantVillage datasets.',
     tags: ['PyTorch', 'ViT', 'OpenCV'],
-    // github: 'https://github.com/yourusername/crop-disease',
+    // github: 'https://github.com/yourusername/crop-disease',   
   },
   {
     cover: '/noisescopecover.png',
