@@ -49,7 +49,8 @@ const PROJECTS = [
     tags: ['PHP', 'MySQL', 'JWT'],
   },
   {
-    icon: '🌌',
+    cover: '/cosmiccanvas-cover.png',
+    alt: 'Cosmic preview',
     status: 'status-live',
     statusLabel: 'Live',
     name: 'Cosmic Canvas',
@@ -59,7 +60,8 @@ const PROJECTS = [
     demo: 'https://varun987-a11.github.io/Cosmic-Canvas/'
   },
   {
-    icon: '📜',
+    cover: '/vedicwisdom-cover.png',
+    alt: 'VedicWisdom preview',
     status: 'status-live',
     statusLabel: 'Live',
     name: 'Vedic Wisdom',
